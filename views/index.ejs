@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSB Trader</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>WallstreetBets Stock Comments Sentiment Analysis</h1>
+        <div class="row row-cols-auto">
+            <% for( let index = 0; index < wsb_data_list.length; index++ ) { %>
+            <div class="col cards">
+                <div class="card border-secondary" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= wsb_data_list[index]["ticker"] %></h5>
+                        <p class="card-text">
+                            # of comments: <%= wsb_data_list[index]["no_of_comments"] %>
+                            <br>
+                            Sentiment: <%= wsb_data_list[index]["sentiment"] %>
+                            <br>
+                            Sentiment score: <%= wsb_data_list[index]["sentiment_score"] %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
